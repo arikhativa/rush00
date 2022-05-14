@@ -1,5 +1,10 @@
 #include<unistd.h>
 
+#define CORNER_1 'A'
+#define CORNER_2 'C'
+#define LINE 'B'
+#define MID ' '
+
 int	generic_print(int j, int x, char chars_to_print[3])
 {
 	while (j <= x)
@@ -19,9 +24,9 @@ int	side_logic(int j, int x)
 {
 	char	chars_to_print[3];
 
-	chars_to_print[0] = 'H';
-	chars_to_print[1] = 'H';
-	chars_to_print[2] = ' ';
+	chars_to_print[0] = LINE;
+	chars_to_print[1] = LINE;
+	chars_to_print[2] = MID;
 	j = generic_print(j, x, chars_to_print);
 	write(1, "\n", 1);
 	return (j);
@@ -31,9 +36,9 @@ int	bottom_logic(int j, int x)
 {
 	char	chars_to_print[3];
 
-	chars_to_print[0] = 'B';
-	chars_to_print[1] = 'A';
-	chars_to_print[2] = 'H';
+	chars_to_print[0] = CORNER_2;
+	chars_to_print[1] = CORNER_1;
+	chars_to_print[2] = LINE;
 	return (generic_print(j, x, chars_to_print));
 }
 
@@ -41,9 +46,9 @@ int	top_logic(int j, int x)
 {
 	char	chars_to_print[3];
 
-	chars_to_print[0] = 'A';
-	chars_to_print[1] = 'B';
-	chars_to_print[2] = 'H';
+	chars_to_print[0] = CORNER_1;
+	chars_to_print[1] = CORNER_2;
+	chars_to_print[2] = LINE;
 	return (generic_print(j, x, chars_to_print));
 }
 
