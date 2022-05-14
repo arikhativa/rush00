@@ -1,73 +1,61 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush04.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alejsanc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/14 22:14:21 by alejsanc          #+#    #+#             */
+/*   Updated: 2022/05/14 22:23:55 by alejsanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #define CORNER_1 'A'
 #define CORNER_2 'C'
 #define LINE 'B'
 #define MID ' '
 
-int	generic_print(int j, int x, char chars_to_print[3])
+//--------------LIBRERIAS----------
+#include<stdio.h>
+#include<unistd.h>
+
+//--------------FUNCIONES----------
+void ft_putchar();
+
+//--------------VARIABLES----------
+//int column;
+//int row;
+int cont;
+
+int row = 1;
+int column = 1;
+
+//------------RHYTHM&BLUES---------
+// y es FILA!!!!!!!! x es COLUMNA!!!!!!!
+
+void ft_rush(int x, int y)
 {
-	while (j <= x)
-	{
-		if (j == 1)
-			write(1, &chars_to_print[0], 1);
-		else if (j == x)
-			write(1, &chars_to_print[1], 1);
-		else
-			write(1, &chars_to_print[2], 1);
-		++j;
-	}
-	return (j);
-}
+    cont = x*y;
+    while (cont > 0)
+    {
+        if((row == 1 && column == 1) || (row = y && column == x))
+            ft_putchar(CORNER_1);
 
-int	side_logic(int j, int x)
-{
-	char	chars_to_print[3];
+        else if ((row == 1 && column == x) || (row == y && column == 1))
+            ft_putchar(CORNER_2);
 
-	chars_to_print[0] = LINE;
-	chars_to_print[1] = LINE;
-	chars_to_print[2] = MID;
-	j = generic_print(j, x, chars_to_print);
-	write(1, "\n", 1);
-	return (j);
-}
+        else if (row > 1 && row < y && column > 1 && column < x)
+            ft_putchar(MID);
 
-int	bottom_logic(int j, int x)
-{
-	char	chars_to_print[3];
-
-	chars_to_print[0] = CORNER_2;
-	chars_to_print[1] = CORNER_1;
-	chars_to_print[2] = LINE;
-	return (generic_print(j, x, chars_to_print));
-}
-
-int	top_logic(int j, int x)
-{
-	char	chars_to_print[3];
-
-	chars_to_print[0] = CORNER_1;
-	chars_to_print[1] = CORNER_2;
-	chars_to_print[2] = LINE;
-	return (generic_print(j, x, chars_to_print));
-}
-
-void	ft_prueba(int x, int y)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 1;
-	while (i <= y)
-	{
-		j = 1;
-		if (i == 1)
-			j = top_logic(j, x);
-		if (i == y)
-			j = bottom_logic(j, x);
-		else
-			j = side_logic(j, x);
-		i++;
-	}
+        else
+            ft_putchar(LINE);
+        column++;
+        cont++;
+        if (column == x)
+        {
+            column=1;
+            row++;
+        }
+    }
 }
