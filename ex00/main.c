@@ -13,10 +13,10 @@
 #include<stdio.h>
 #include<unistd.h>
 
-void ft_prueba();
+void rush();
 
 int main(void)
 {
-	rush(5,4);
+	rush(10,20);
 	return(0);
 }

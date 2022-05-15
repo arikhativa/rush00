@@ -11,51 +11,105 @@
 /* ************************************************************************** */
 
 
-#define CORNER_1 'A'
-#define CORNER_2 'C'
-#define LINE 'B'
-#define MID ' '
+#define CORNER_1 '1'
+#define CORNER_2 '2'
+#define CORNER_3 '3'
+#define CORNER_4 '4'
+#define RT  'R'
+#define WALL  'W'
+#define MID '.'
 
-//--------------LIBRERIAS----------
 #include<stdio.h>
 #include<unistd.h>
 
-//--------------FUNCIONES----------
-void ft_putchar();
+void ft_putchar(char c);
+void print_first_row(int x);
+void print_last_row(int x);
+void print_mid_row(int x, int y);
 
-//--------------VARIABLES----------
-//int column;
-//int row;
-int cont;
 
-int row = 1;
-int column = 1;
 
-//------------RHYTHM&BLUES---------
-// y es FILA!!!!!!!! x es COLUMNA!!!!!!!
-
-void ft_rush(int x, int y)
-{
-    cont = x*y;
-    while (cont > 0)
+void rush(int x, int y)
+{   
+    int cont;
+    cont = 1;
+    while (cont <= y)
     {
-        if((row == 1 && column == 1) || (row = y && column == x))
-            ft_putchar(CORNER_1);
-
-        else if ((row == 1 && column == x) || (row == y && column == 1))
-            ft_putchar(CORNER_2);
-
-        else if (row > 1 && row < y && column > 1 && column < x)
-            ft_putchar(MID);
-
-        else
-            ft_putchar(LINE);
-        column++;
-        cont++;
-        if (column == x)
+        if (cont == 1)
         {
-            column=1;
-            row++;
+            print_first_row(x);
+            ft_putchar('\n');
         }
+        else if (cont == y)
+        {
+            print_last_row(x);
+        }
+        else
+            print_mid_row(x,y);
+        cont++;
     }
 }
+
+
+void print_first_row(int x)
+{
+    int col;
+    col = 1;
+    while (col <= x)
+    {
+        if (col == 1)
+            ft_putchar(CORNER_1);
+        else if (col == x)
+            ft_putchar(CORNER_2);
+        else
+            ft_putchar(RT);
+        col++;
+    } 
+}
+
+void print_last_row(int x)
+{
+    int col;
+    col = 1;
+    while (col < x)
+    {
+        if (col == 1)
+            ft_putchar(CORNER_3);
+        else if (col == x)
+            ft_putchar(CORNER_4);
+        else
+            ft_putchar(RT);
+        col++;
+    } 
+}
+
+void print_mid_row (int x, int y)
+{
+    int row;
+    int col;
+    col = 1;
+    row = 2;
+
+    while(row < y)
+    {
+        while(col < x)
+        {
+            if (col == 1)
+            {
+                ft_putchar(WALL);
+            }
+            else if (col == x)
+            {
+                ft_putchar(WALL);
+                ft_putchar('\n');
+            }
+            else
+            {
+                ft_putchar(MID);
+            }
+            col++;
+        }
+        row++;
+    }
+}
+
