@@ -6,12 +6,11 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:16:29 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/15 15:58:34 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/15 17:40:27 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include<unistd.h>
 
 void rush();
 
