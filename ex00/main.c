@@ -6,14 +6,16 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:16:29 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/15 17:50:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/15 18:14:29 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	rush(int x, int y);
 
 int	main(void)
 {
-	rush(123, 42);
+	rush(42, 42);
 	return (0);
 }
