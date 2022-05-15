@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alejsanc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:14:21 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/14 22:23:55 by alejsanc         ###   ########.fr       */
+/*   Updated: 2022/05/15 16:00:23 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void print_last_row(int x)
 {
     int col;
     col = 1;
-    while (col < x)
+    while (col <= x)
     {
         if (col == 1)
             ft_putchar(CORNER_3);
@@ -92,9 +92,9 @@ void print_mid_row (int x, int y)
 
     while(row < y)
     {
-        while(col < x)
+        while(col <= x)
         {
-            if (col == 1)
+            if (col == 1 && x != 1)
             {
                 ft_putchar(WALL);
             }
