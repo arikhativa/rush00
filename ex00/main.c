@@ -6,20 +6,14 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:16:29 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/15 17:40:27 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/15 17:50:54 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+void	rush(int x, int y);
 
-void rush();
-
-int main(void)
+int	main(void)
 {
-	rush(1,1); printf("\n\n");
-	rush(1,3); printf("\n\n");
-	rush(3,1); printf("\n\n");
-	rush(4,4); printf("\n\n");
-	rush(40,5); printf("\n\n");
-	return(0);
+	rush(123, 42);
+	return (0);
 }

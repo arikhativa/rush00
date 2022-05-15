@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:14:21 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/15 17:40:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/15 17:43:34 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	rush(int x, int y)
 {
 	int	cont;
 
+	if (x <= 0 || y <= 0)
+		return ;
 	cont = 1;
 	while (cont <= y)
 	{
