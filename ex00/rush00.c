@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:14:21 by alejsanc          #+#    #+#             */
-/*   Updated: 2022/05/15 17:43:34 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/15 18:08:39 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-
-#define CORNER_1 'A'
-#define CORNER_2 'C'
-#define CORNER_3 'A'
-#define CORNER_4 'C'
-#define RT 'B'
-#define WALL 'B'
+#define CORNER_1 'o'
+#define CORNER_2 'o'
+#define CORNER_3 'o'
+#define CORNER_4 'o'
+#define RT  '-'
+#define WALL  '|'
 #define MID ' '
 
 void	ft_putchar(char c);
@@ -41,7 +39,9 @@ void	rush(int x, int y)
 			ft_putchar('\n');
 		}
 		else if (cont == y)
+		{
 			print_last_row(x);
+		}
 		else
 			print_mid_row(x, y);
 		cont++;
